@@ -20,26 +20,40 @@ def draw_shapes(num_sides):
         tim.right(angle)
 
 
+def draw_circle(radius):
+    rgb = (random.random(), random.random(), random.random())
+    tim.pencolor(rgb)
+    radius = 100
+    tim.pensize(width=1
+    tim.speed("fastest")
+    tim.circle(radius)
+    tim.right(10)
+
+
+for num_circles in range(36):
+    draw_circle(num_circles)  # , extent=0, steps=1)
+
+
 # for shape_sides_n in range(3, 41):
 #     draw_shapes(shape_sides_n)
 
 def random_walk(num_steps):
-    rgb = (random.random(), random.random(), random.random())
+    rgb=(random.random(), random.random(), random.random())
     tim.pencolor(rgb)
     tim.pensize(width=10)
-    tim.speed(speed=6)
-    direction = [0, 90, 180, 270, 360]
+    tim.speed("fastest")
+    direction=[0, 90, 180, 270, 360]
     for _ in range(num_steps):
         tim.forward(30)
-        tim.right(random.choice(direction))
+        tim.setheading(random.choice(direction))
 
 
-for walk_steps_n in range(3, 20):
-    random_walk(walk_steps_n)
+# for walk_steps_n in range(3, 201):
+#     random_walk(walk_steps_n)
 
 
 def square():
-    rgb = (random.random(), random.random(), random.random())
+    rgb=(random.random(), random.random(), random.random())
     tim.pencolor(rgb)
     for _ in range(4):
         tim.forward(100)
@@ -47,7 +61,7 @@ def square():
 
 
 def pentagon():
-    rgb = (random.random(), random.random(), random.random())
+    rgb=(random.random(), random.random(), random.random())
     tim.pencolor(rgb)
     for _ in range(5):
         tim.forward(100)
@@ -55,7 +69,7 @@ def pentagon():
 
 
 def hexagon():
-    rgb = (random.random(), random.random(), random.random())
+    rgb=(random.random(), random.random(), random.random())
     tim.pencolor(rgb)
     for _ in range(6):
         tim.forward(100)
@@ -63,7 +77,7 @@ def hexagon():
 
 
 def heptagon():
-    rgb = (random.random(), random.random(), random.random())
+    rgb=(random.random(), random.random(), random.random())
     tim.pencolor(rgb)
     for _ in range(7):
         tim.forward(100)
@@ -71,7 +85,7 @@ def heptagon():
 
 
 def octagon():
-    rgb = (random.random(), random.random(), random.random())
+    rgb=(random.random(), random.random(), random.random())
     tim.pencolor(rgb)
     for _ in range(8):
         tim.forward(100)
@@ -95,5 +109,5 @@ def dashed_line():
 # octagon()
 
 
-screen = Screen()
+screen=Screen()
 screen.exitonclick()
