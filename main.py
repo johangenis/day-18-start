@@ -5,6 +5,7 @@ import random
 tim = Turtle()
 tim.shape("turtle")
 tim.color("red")
+tim.speed("fastest")
 # r = random.random()
 # b = random.random()
 # g = random.random()
@@ -20,6 +21,17 @@ def draw_shapes(num_sides):
         tim.right(angle)
 
 
+def draw_spirograph(size_of_gap):
+    for _ in range(int(360 / size_of_gap)):
+        rgb = (random.random(), random.random(), random.random())
+        tim.pencolor(rgb)
+        tim.circle(100)
+        tim.setheading(tim.heading() + size_of_gap)
+
+
+draw_spirograph(5)
+
+
 # for shape_sides_n in range(3, 41):
 #     draw_shapes(shape_sides_n)
 
@@ -27,15 +39,15 @@ def random_walk(num_steps):
     rgb = (random.random(), random.random(), random.random())
     tim.pencolor(rgb)
     tim.pensize(width=10)
-    tim.speed(speed=6)
+    tim.speed("fastest")
     direction = [0, 90, 180, 270, 360]
     for _ in range(num_steps):
         tim.forward(30)
-        tim.right(random.choice(direction))
+        tim.setheading(random.choice(direction))
 
 
-for walk_steps_n in range(3, 20):
-    random_walk(walk_steps_n)
+# for walk_steps_n in range(3, 201):
+#     random_walk(walk_steps_n)
 
 
 def square():
